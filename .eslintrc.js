@@ -1,21 +1,27 @@
+/* eslint-env node */
 module.exports = {
   root: true, // 只在项目根配置中使用
-  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
+  extends: [
+    //'airbnb-base', // airbnb non-react
+    //'airbnb', // airbnb react
+    'eslint:recommended',
+    'plugin:prettier/recommended', // Use Prettier with ESLint
+  ],
   parserOptions: {
     ecmaVersion: 6,
     sourceType: 'module',
     ecmaFeatures: {
-      jsx: true,
+      // jsx: true, // for react
     },
   },
   env: {
     es6: true,
-    browser: true,
-    node: true,
-    // mocha: true,
-    // jest: true,
+    browser: true, // for browser env
+    // node: true, // for node env
+    // mocha: true, // for `test/.eslintrc.js`
+    // jest: true, // for `test/.eslintrc.js`
   },
   rules: {
-    // semi: 2,
+    //semi: 2,
   },
 };
